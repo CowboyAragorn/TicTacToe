@@ -2,12 +2,38 @@ body{
     height: 100%;
 }
 
+
 #board{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
+ #playerTextContainer, #turnMessageContainerReal{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 10pt;
+}
+
+#playerTextHolder, #turnMessageContainer{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 3pt;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+}
 .row{
+    justify-content: center;
+    align-content: center;
     display: flex;
     gap: 5pt;
 }
@@ -15,4 +41,44 @@ body{
 .boardSpace{
     height: 50px;
     width: 150px;
+}
+
+
+#popupScreen{
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0 , 0, 0.5);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#popup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#popupHolder{
+    display: flex;
+    flex-direction: column;
+    border: 2pt black solid;
+    width: 200pt;
+    background-color: red;
+}
+
+#inputRight{
+     display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+
+#closeBtn{
+    background-color: grey;
+    color: white;
 }

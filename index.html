@@ -8,12 +8,24 @@
     <title>TicTacToe</title>
 </head>
 <body>
-    <div id = 'playerTextContainer'>
-        <p>Tic-Tac-Draw</p>
-        <p id = playerText>Danny Boy, this is a Showdown</p>
+
+    <div id = 'popupScreen'>
+        <div id = 'popup'>
+            <div id = 'popupHolder'>
+                <div id='inputRight'>
+                    <button id='closeBtn' class='popupBtn'>X</button>
+                </div>
+                <p id = 'popupText'></p>
+            </div>
+        </div>
     </div>
-   <input type = 'text' id ='inputText'>
-   <button id ='submit'>submit</button> 
+
+    <div id = 'playerTextContainer'>
+        <div id='playerTextHolder'>
+            <p class='text'>Tic-Tac-Draw</p>
+            <p class='text' id=playerText>Danny Boy, this is a Showdown</p>
+        </div>
+    </div>
     <div id = 'board'>
         <div id ='topRow' class = 'row'>
             <button id ='one' class = 'boardSpace'></button>
@@ -32,8 +44,10 @@
             <button id='nine' class='boardSpace'></button>
         </div>
     </div>
-    <div id='turnMessageContainer'>
-      
+    <div id ='turnMessageContainerReal'>
+        <div id='turnMessageContainer'>
+        
+        </div>
     </div>
 </body>
 <script src='script.js'></script>

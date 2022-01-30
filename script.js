@@ -70,13 +70,21 @@ const game = (() => {
         square9.addEventListener('click', () => {
             addMarkAndChangeTurn(square9);
         })
+        let popupScreen = document.querySelector('#popupScreen');
+        let closeBtn = document.querySelector('#closeBtn');
+        closeBtn.addEventListener('click', () => {
+            popupScreen.style.display = 'none'
+        })
+
+
     }
     
     
     let turn = true;
-    let playerTextContainer = document.querySelector('#playerTextContainer')
+    //let playerTextContainer = document.querySelector('#playerTextContainer')
     let turnMessageContainer = document.querySelector('#turnMessageContainer')
     let turnMessage = document.createElement('p')
+    turnMessage.innerText = turnMessage.innerText = player1.playerName() + ' Turn';
     turnMessageContainer.append(turnMessage)
 
     function addMarkAndChangeTurn(x){
@@ -101,22 +109,26 @@ const game = (() => {
     function victory() {
         let victoryMessage = document.createElement('p')
         victoryMessage.id = 'victoryMessage'
-        let playerText = document.querySelector('#playerText')
+        let popupScreen = document.querySelector('#popupScreen')
+        let popupText = document.querySelector('#popupText')
 
         function player1Victory(){
-            playerText.innerText = player1.playerName() + ' Drew First and Shot - ' + player2.playerName() + ' Collapsed in the Corner.'
+            popupScreen.style.display ='block'
+            popupText.innerText = player1.playerName() + ' Drew First and Shot - ' + player2.playerName() + ' Collapsed in the Corner.'
             //playerTextContainer.append(victoryMessage)
             //victoryMessage.innerText = player1.playerName() + ' Drew First and Shot and - ' + player2.playerName() + ' Collapsed in the Corner.'
         }
 
         function player2Victory() {
-            playerText.innerText = player2.playerName() + ' Drew First and Shot - ' + player2.playerName() + ' Collapsed in the Corner.'
+            popupScreen.style.display = 'block'
+            popupText.innerText = player2.playerName() + ' Drew First and Shot - ' + player2.playerName() + ' Collapsed in the Corner.'
             //playerTextContainer.append(victoryMessage)
             //victoryMessage.innerText = player2.playerName() + ' Drew First and Shot and - ' + player1.playerName() + ' Collapsed in the Corner.'
         }
 
         function tie() {
-            playerText.innerText = 'Doc its only a scratch, Ill be better soon as im able'
+            popupScreen.style.display = 'block'
+            popupText.innerText = 'Doc its only a scratch, Ill be better soon as im able'
         }
 
         //horizontals//
@@ -258,12 +270,4 @@ const game = (() => {
 })();
 
 
-function inputs(){
-    const submit = document.querySelector('#submit');
-    submit.addEventListener('click', () => {
-        let input = document.querySelector("#inputText").value;
-        gameBoard.addToBoard(input)
-    }
-    )
-}
 
