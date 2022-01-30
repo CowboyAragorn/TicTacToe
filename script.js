@@ -182,6 +182,8 @@ const game = (() => {
             popupText2.innerText = 'Doc its only a scratch, Ill be better soon as im able'
         }
 
+        //This is crazy inefficient and why I should have been using the array//
+
         //horizontals//
         if (square1.value == 1 && square2.value == 1 && square3.value == 1) {
             player1Victory()
