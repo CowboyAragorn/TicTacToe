@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     <link rel='stylesheet' href = 'style.css'>
     <title>TicTacToe</title>
 </head>
@@ -12,7 +15,12 @@
         <div id = 'entryPopup'>
             <div id = 'entryPopupHolder'>
                 <p id = 'entryText'>Tic-Tac-Draw</p>
-                <button id = 'humanBtn'>VS Human</button>
+                <button id = 'humanBtn'>VS Partner</button>
+                <div id = 'imgContainer'>
+                    <img src='img/coltLeft.png' class='colt'>
+                    <img src = 'img/saloonDoors.png' id = saloonDoors>
+                    <img src = 'img/coltRight.png' class = 'colt'>
+                </div>
                <!--<button id='aiBtn'>VS AI</button> -->
             </div>
         </div>
@@ -22,14 +30,16 @@
     <div id='playerPopup'>
         <div id='playerPopupHolder'>
             <div id='inputRight'>
-                <button id='closeBtn' class='popupBtn'>X</button>
+                <button id='closeBtn'>X</button>
             </div>
             <div id = 'popupTextContainer'>
                 <p id='playerPopupText'>Identify Yourself</p>
-                <button id='defaultsBtn'>Defaults</button>
-                Player 1: <input type='text' id='player1NameInput'>
-                Player 2: <input type='text' id='player2NameInput'>
-                <button id='submitPlayerBtn'>Draw!</button>
+                <button id='defaultsBtn' class = 'popupBtn'>Defaults</button>
+                <label for = 'player1NameInput' class = 'label'>Player 1: </label>
+                <input type='text' name = 'player1NameInput' id='player1NameInput' class = 'playerName'>
+                <label for='player2NameInput' class='label'>Player 2: </label>
+                <input type='text' name = 'player2NameInput'id='player2NameInput' class = 'playerName'>
+                <button id='submitPlayerBtn' class = 'popupBtn'>Draw!</button>
             </div>
         </div>
     </div>

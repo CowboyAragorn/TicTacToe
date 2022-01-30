@@ -105,6 +105,8 @@ const game = (() => {
         })
         let closeBtn = document.querySelector('#closeBtn');
         closeBtn.addEventListener('click', () => {
+            player1NameInput.value = '';
+            player2NameInput.value = '';
             playerPopupScreen.style.display = 'none'
         })
         let defaultsBtn = document.querySelector('#defaultsBtn');
