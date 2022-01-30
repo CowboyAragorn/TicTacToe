@@ -25,10 +25,11 @@ const player = (name) => {
 }
 
 
-const player1 = player('Malcolm X');
-const player2 = player('Jackie O');
+//const player1 = player('Malcolm X');
+//const player2 = player('Jackie O');
 
-
+let player1
+let player2
 
 const game = (() => {
     let square1 = document.querySelector('#one')
@@ -41,6 +42,8 @@ const game = (() => {
     let square8 = document.querySelector('#eight')
     let square9 = document.querySelector('#nine')
     squareListeners()
+    
+    
     
     //adds all the event listeners for the site at once//
     function squareListeners(){
@@ -71,18 +74,40 @@ const game = (() => {
         square9.addEventListener('click', () => {
             addMarkAndChangeTurn(square9);
         })
-       /* let popupScreen = document.querySelector('#popupScreen');
-        let closeBtn = document.querySelector('#closeBtn');
-        closeBtn.addEventListener('click', () => {
-            popupScreen.style.display = 'none'
-        })
-        */
+       // let popupScreen = document.querySelector('#popupScreen');
+        
         let replayBtn = document.querySelector('#replayBtn');
         replayBtn.addEventListener('click', reset);
-        let humanBtn = document.querySelector('#humanBtn')
+
+        let playerPopupScreen = document.querySelector('#playerPopupScreen')
+        let humanBtn = document.querySelector('#humanBtn');
         humanBtn.addEventListener('click', () => {
-            entryScreen.style.display = 'none'
+            playerPopupScreen.style.display = 'block';
         })
+
+
+
+
+        let player1NameInput = document.querySelector('#player1NameInput')
+        let player2NameInput = document.querySelector('#player2NameInput')
+        let submitPlayerBtn = document.querySelector('#submitPlayerBtn')
+        submitPlayerBtn.addEventListener('click', () => {
+            player1 = player(player1NameInput.value);
+            player2 = player(player2NameInput.value);
+            playerPopupScreen.style.display = 'none';
+            entryScreen.style.display = 'none';
+            player1NameInput.value = '';
+            player2NameInput.value = '';
+            //Need to put this in the event listener because otherwise a playername doesn't exist for original turn message//
+            turnMessage.innerText = turnMessage.innerText = player1.playerName() + ' Turn';
+
+
+        })
+        let closeBtn = document.querySelector('#closeBtn');
+        closeBtn.addEventListener('click', () => {
+            playerPopupScreen.style.display = 'none'
+        })
+
         let mainMenu = document.querySelector('#mainMenu');
         mainMenu.addEventListener('click', () => {
             reset();
@@ -96,10 +121,9 @@ const game = (() => {
     let turn = true;
     //let playerTextContainer = document.querySelector('#playerTextContainer')
     let turnMessageContainer = document.querySelector('#turnMessageContainer')
-    let turnMessage = document.createElement('p')
-    turnMessage.innerText = turnMessage.innerText = player1.playerName() + ' Turn';
-    turnMessageContainer.append(turnMessage)
-
+    let turnMessage = document.createElement('p');
+    turnMessageContainer.append(turnMessage);
+   
     function addMarkAndChangeTurn(x){
         if (turn == true){
             x.innerText = 'x';

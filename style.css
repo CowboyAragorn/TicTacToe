@@ -83,7 +83,7 @@ body{
 
 
 
-#popupScreen{
+#popupScreen, #playerPopupScreen{
     display: none;
     position: fixed;
     background-color: rgba(0, 0 , 0, 0.5);
@@ -94,14 +94,14 @@ body{
     z-index: 1;
 }
 
-#popup{
+#popup, #playerPopup{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10%;
 }
 
-#popupHolder{
+#popupHolder, #playerPopupHolder{
     display: flex;
     flex-direction: column;
     border: 2pt black solid;
