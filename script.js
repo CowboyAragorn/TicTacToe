@@ -158,24 +158,28 @@ const game = (() => {
         victoryMessage.id = 'victoryMessage'
         let popupScreen = document.querySelector('#popupScreen')
         let popupText = document.querySelector('#popupText')
+        let popupText2 = document.querySelector('#popupText2')
+
 
         function player1Victory(){
             popupScreen.style.display ='block'
-            popupText.innerText = player1.playerName() + ' Was Hot, You Drew First and Shot - and ' + player2.playerName() + ' Collapsed in the Corner.'
+            popupText.innerText = player1.playerName() + ' was hot, drew first and shot';
+            popupText2.innerText = 'and ' + player2.playerName() + ' collapsed in the corner.';
             //playerTextContainer.append(victoryMessage)
             //victoryMessage.innerText = player1.playerName() + ' Drew First and Shot and - ' + player2.playerName() + ' Collapsed in the Corner.'
         }
 
         function player2Victory() {
             popupScreen.style.display = 'block'
-            popupText.innerText = player2.playerName() + ' Was Hot, You Drew First and Shot - and ' + player1.playerName() + ' Collapsed in the Corner.'
-            //playerTextContainer.append(victoryMessage)
+            popupText.innerText = player2.playerName() + ' was hot, drew first and shot';
+            popupText2.innerText = 'and ' + player1.playerName() + ' collapsed in the corner.';            //playerTextContainer.append(victoryMessage)
             //victoryMessage.innerText = player2.playerName() + ' Drew First and Shot and - ' + player1.playerName() + ' Collapsed in the Corner.'
         }
 
         function tie() {
             popupScreen.style.display = 'block'
-            popupText.innerText = 'Doc its only a scratch, Ill be better soon as im able'
+            popupText.innerText = 'CAT'
+            popupText2.innerText = 'Doc its only a scratch, Ill be better soon as im able'
         }
 
         //horizontals//

@@ -148,6 +148,10 @@ body{
     width: 400pt;
     background-color: brown;
 }
+
+.btnContainer{
+    display: flex;
+}
 #closeBtn{
     background-color: brown;
     color: white;

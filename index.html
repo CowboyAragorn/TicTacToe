@@ -53,8 +53,11 @@
                 </div>
             -->
                 <p id = 'popupText'></p>
-                <button id = 'replayBtn'>Play Again?</button>
-                <button id = 'mainMenu'>Main Menu</button>
+                <p id = 'popupText2'></p>
+                <div id = btnContainer>
+                        <button id = 'replayBtn' class = 'popupBtn'>Play Again?</button>
+                        <button id = 'mainMenu' class = 'popupBtn'>Main Menu</button>
+                </div>    
             </div>
         </div>
     </div>
@@ -62,7 +65,12 @@
     <div id = 'playerTextContainer'>
         <div id='playerTextHolder'>
             <p class='text' id=playerText>Danny Boy, this is a Showdown</p>
+            <div id='turnMessageContainerReal'>
+                <div id='turnMessageContainer'>
+            
+                </div>
         </div>
+    </div>
     </div>
     <div id = 'board'>
         <div id ='topRow' class = 'row'>
@@ -82,10 +90,6 @@
             <button id='nine' class='boardSpace'></button>
         </div>
     </div>
-    <div id ='turnMessageContainerReal'>
-        <div id='turnMessageContainer'>
-        
-        </div>
     </div>
 </body>
 <script src='script.js'></script>
