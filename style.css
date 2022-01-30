@@ -101,18 +101,37 @@ body{
     margin-top: 10%;
 }
 
-#popupHolder, #playerPopupHolder{
+#popupHolder{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5pt;
     border: 2pt black solid;
     width: 400pt;
     background-color: brown;
 }
 
+#playerPopupHolder{
+display: flex;
+    flex-direction: column;
+    border: 2pt black solid;
+    width: 200pt;
+    padding: 10pt;
+    background-color: brown;
+}
+
+#popupTextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6pt;
+}
 
 
 #inputRight{
-     display: flex;
+    display: flex;
     align-items: right;
     justify-content: right;
     margin-top: 5%;

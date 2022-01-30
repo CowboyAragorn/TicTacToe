@@ -107,12 +107,20 @@ const game = (() => {
         closeBtn.addEventListener('click', () => {
             playerPopupScreen.style.display = 'none'
         })
+        let defaultsBtn = document.querySelector('#defaultsBtn');
+        defaultsBtn.addEventListener('click', () => {
+            player1NameInput.value = 'Daniel';
+            player2NameInput.value = 'Rocky';
+        })
+
+
 
         let mainMenu = document.querySelector('#mainMenu');
         mainMenu.addEventListener('click', () => {
             reset();
             entryScreen.style.display = 'block'
         })
+
 
 
     }
@@ -151,14 +159,14 @@ const game = (() => {
 
         function player1Victory(){
             popupScreen.style.display ='block'
-            popupText.innerText = player1.playerName() + ' Drew First and Shot - ' + player2.playerName() + ' Collapsed in the Corner.'
+            popupText.innerText = player1.playerName() + ' Was Hot, You Drew First and Shot - and ' + player2.playerName() + ' Collapsed in the Corner.'
             //playerTextContainer.append(victoryMessage)
             //victoryMessage.innerText = player1.playerName() + ' Drew First and Shot and - ' + player2.playerName() + ' Collapsed in the Corner.'
         }
 
         function player2Victory() {
             popupScreen.style.display = 'block'
-            popupText.innerText = player2.playerName() + ' Drew First and Shot - ' + player1.playerName() + ' Collapsed in the Corner.'
+            popupText.innerText = player2.playerName() + ' Was Hot, You Drew First and Shot - and ' + player1.playerName() + ' Collapsed in the Corner.'
             //playerTextContainer.append(victoryMessage)
             //victoryMessage.innerText = player2.playerName() + ' Drew First and Shot and - ' + player1.playerName() + ' Collapsed in the Corner.'
         }
