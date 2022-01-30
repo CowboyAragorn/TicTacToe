@@ -42,6 +42,7 @@ const game = (() => {
     let square9 = document.querySelector('#nine')
     squareListeners()
     
+    //adds all the event listeners for the site at once//
     function squareListeners(){
         square1.addEventListener('click', () => {
             addMarkAndChangeTurn(square1);
@@ -70,10 +71,22 @@ const game = (() => {
         square9.addEventListener('click', () => {
             addMarkAndChangeTurn(square9);
         })
-        let popupScreen = document.querySelector('#popupScreen');
+       /* let popupScreen = document.querySelector('#popupScreen');
         let closeBtn = document.querySelector('#closeBtn');
         closeBtn.addEventListener('click', () => {
             popupScreen.style.display = 'none'
+        })
+        */
+        let replayBtn = document.querySelector('#replayBtn');
+        replayBtn.addEventListener('click', reset);
+        let humanBtn = document.querySelector('#humanBtn')
+        humanBtn.addEventListener('click', () => {
+            entryScreen.style.display = 'none'
+        })
+        let mainMenu = document.querySelector('#mainMenu');
+        mainMenu.addEventListener('click', () => {
+            reset();
+            entryScreen.style.display = 'block'
         })
 
 
@@ -121,7 +134,7 @@ const game = (() => {
 
         function player2Victory() {
             popupScreen.style.display = 'block'
-            popupText.innerText = player2.playerName() + ' Drew First and Shot - ' + player2.playerName() + ' Collapsed in the Corner.'
+            popupText.innerText = player2.playerName() + ' Drew First and Shot - ' + player1.playerName() + ' Collapsed in the Corner.'
             //playerTextContainer.append(victoryMessage)
             //victoryMessage.innerText = player2.playerName() + ' Drew First and Shot and - ' + player1.playerName() + ' Collapsed in the Corner.'
         }
@@ -134,70 +147,70 @@ const game = (() => {
         //horizontals//
         if (square1.value == 1 && square2.value == 1 && square3.value == 1) {
             player1Victory()
-            reset()
+            
         }
         else if (square1.value == 2 && square2.value == 2 && square3.value == 2) {
             player2Victory()
-            reset()
+            
         }
         else if (square4.value == 1 && square5.value == 1 && square6.value == 1) {
             player1Victory()
-            reset()
+            
         }
         else if (square4.value == 2 && square5.value == 2 && square6.value == 2) {
             player2Victory()
-            reset()
+          
         }
         else if (square7.value == 1 && square8.value == 1 && square9.value == 1) {
             player1Victory()
-            reset()
+           
         }
         else if (square7.value == 2 && square8.value == 2 && square9.value == 2) {
             player2Victory()
-            reset()
+          
         }
 
         //verticals//
         else if (square1.value == 1 && square4.value == 1 && square7.value == 1) {
             player1Victory()
-            reset()
+            
         }
         else if (square1.value == 2 && square4.value == 2 && square7.value == 2) {
             player2Victory()
-            reset()
+         
         }
         else if (square2.value == 1 && square5.value == 1 && square8.value == 1) {
             player1Victory()
-            reset()
+            
         }
         else if (square2.value == 2 && square5.value == 2 && square8.value == 2) {
             player2Victory()
-            reset()
+          
         }
         else if (square3.value == 1 && square6.value == 1 && square9.value == 1) {
             player1Victory()
-            reset()
+            
         }
         else if (square3.value == 2 && square6.value == 2 && square9.value == 2) {
             player2Victory()
-            reset()
+           
         }
         //diagonals//
         else if (square1.value == 1 && square5.value == 1 && square9.value == 1) {
             player1Victory()
-            reset()
+            
         }
         else if (square1.value == 2 && square5.value == 2 && square9.value == 2) {
             player2Victory()
-            reset()
+            
         }
         else if (square3.value == 1 && square5.value == 1 && square7.value == 1) {
             player1Victory()
-            reset()
+          
         }
         else if (square3.value == 2 && square5.value == 2 && square7.value == 2) {
             player2Victory()
-            reset()
+           
         }
         else if (
             square1.value != 0 &&
@@ -209,14 +222,15 @@ const game = (() => {
             square7.value != 0 &&
             square8.value != 0 &&
             square9.value != 0) {
-               tie()
-                reset()
+            tie()
+               
         }
     }
 
     function reset() {
         turn = true;
         turnMessage.innerText = player1.playerName() + ' Turn';
+        popupScreen.style.display = 'none';
 
         square1.disabled = false
         square2.disabled = false
