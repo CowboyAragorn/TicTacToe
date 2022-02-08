@@ -57,6 +57,7 @@ body{
 }
 
 #entryScreen{
+    /*display: block;*/
     display: block;
     position: fixed;
     background-color: burlywood;

@@ -184,74 +184,29 @@ const game = (() => {
 
         //This is crazy inefficient and why I should have been using the array//
 
-        //horizontals//
-        if (square1.value == 1 && square2.value == 1 && square3.value == 1) {
+        //Check values if statements
+        if ((square1.value == 1 && square2.value == 1 && square3.value == 1)
+            || (square4.value == 1 && square5.value == 1 && square6.value == 1)
+            || (square7.value == 1 && square8.value == 1 && square9.value == 1)
+            || (square1.value == 1 && square4.value == 1 && square7.value == 1)
+            || (square2.value == 1 && square5.value == 1 && square8.value == 1)
+            || (square3.value == 1 && square6.value == 1 && square9.value == 1)
+            || (square1.value == 1 && square5.value == 1 && square9.value == 1)
+            || (square3.value == 1 && square5.value == 1 && square7.value == 1)) {
             player1Victory()
             
         }
-        else if (square1.value == 2 && square2.value == 2 && square3.value == 2) {
+        else if ((square1.value == 2 && square2.value == 2 && square3.value == 2) 
+            || (square4.value == 2 && square5.value == 2 && square6.value == 2)
+            || (square7.value == 2 && square8.value == 2 && square9.value == 2)
+            || (square1.value == 2 && square4.value == 2 && square7.value == 2)
+            || (square2.value == 2 && square5.value == 2 && square8.value == 2)
+            || (square3.value == 2 && square6.value == 2 && square9.value == 2)
+            || (square1.value == 2 && square5.value == 2 && square9.value == 2)
+            || (square3.value == 2 && square5.value == 2 && square7.value == 2)){
             player2Victory()
             
-        }
-        else if (square4.value == 1 && square5.value == 1 && square6.value == 1) {
-            player1Victory()
-            
-        }
-        else if (square4.value == 2 && square5.value == 2 && square6.value == 2) {
-            player2Victory()
-          
-        }
-        else if (square7.value == 1 && square8.value == 1 && square9.value == 1) {
-            player1Victory()
-           
-        }
-        else if (square7.value == 2 && square8.value == 2 && square9.value == 2) {
-            player2Victory()
-          
-        }
-
-        //verticals//
-        else if (square1.value == 1 && square4.value == 1 && square7.value == 1) {
-            player1Victory()
-            
-        }
-        else if (square1.value == 2 && square4.value == 2 && square7.value == 2) {
-            player2Victory()
-         
-        }
-        else if (square2.value == 1 && square5.value == 1 && square8.value == 1) {
-            player1Victory()
-            
-        }
-        else if (square2.value == 2 && square5.value == 2 && square8.value == 2) {
-            player2Victory()
-          
-        }
-        else if (square3.value == 1 && square6.value == 1 && square9.value == 1) {
-            player1Victory()
-            
-        }
-        else if (square3.value == 2 && square6.value == 2 && square9.value == 2) {
-            player2Victory()
-           
-        }
-        //diagonals//
-        else if (square1.value == 1 && square5.value == 1 && square9.value == 1) {
-            player1Victory()
-            
-        }
-        else if (square1.value == 2 && square5.value == 2 && square9.value == 2) {
-            player2Victory()
-            
-        }
-        else if (square3.value == 1 && square5.value == 1 && square7.value == 1) {
-            player1Victory()
-          
-        }
-        else if (square3.value == 2 && square5.value == 2 && square7.value == 2) {
-            player2Victory()
-           
-        }
+        }      
         else if (
             square1.value != 0 &&
             square2.value != 0 &&
