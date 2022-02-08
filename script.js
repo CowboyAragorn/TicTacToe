@@ -99,7 +99,7 @@ const game = (() => {
             player1NameInput.value = '';
             player2NameInput.value = '';
             //Need to put this in the event listener because otherwise a playername doesn't exist for original turn message//
-            turnMessage.innerText = turnMessage.innerText = player1.playerName() + ' Turn';
+            turnMessage.innerText = turnMessage.innerText = player1.playerName()+ "'s" + ' Turn';
 
 
         })
@@ -139,13 +139,13 @@ const game = (() => {
             x.innerText = 'x';
             x.value = 1;
             turn = false;
-            turnMessage.innerText = player2.playerName() + ' Turn'
+            turnMessage.innerText = player2.playerName() + "'s" + ' Turn'
         }
         else if (turn == false) {
             x.innerText = 'o';
             x.value = 2;
             turn = true;
-            turnMessage.innerText = player1.playerName() + ' Turn'
+            turnMessage.innerText = player1.playerName() + "'s" + ' Turn'
         }
         x.disabled = true;
         gameBoard.addToBoard();
@@ -179,7 +179,7 @@ const game = (() => {
         function tie() {
             popupScreen.style.display = 'block'
             popupText.innerText = 'CAT'
-            popupText2.innerText = 'Doc its only a scratch, Ill be better soon as im able'
+            popupText2.innerText = 'Doc it\'s only a scratch, I\'ll be better soon as im able'
         }
 
         //This is crazy inefficient and why I should have been using the array//
@@ -224,7 +224,7 @@ const game = (() => {
 
     function reset() {
         turn = true;
-        turnMessage.innerText = player1.playerName() + ' Turn';
+        turnMessage.innerText = player1.playerName()+ "'s" + ' Turn';
         popupScreen.style.display = 'none';
 
         square1.disabled = false
