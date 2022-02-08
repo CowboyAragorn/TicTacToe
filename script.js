@@ -92,6 +92,20 @@ const game = (() => {
         let player2NameInput = document.querySelector('#player2NameInput')
         let submitPlayerBtn = document.querySelector('#submitPlayerBtn')
         submitPlayerBtn.addEventListener('click', () => {
+            if ((player1NameInput.value).length == 0 || (player2NameInput.value).length == 0) {
+                let popupTextContainer = document.querySelector('#popupTextContainer')
+                let errorMessage = document.createElement('p')
+                errorMessage.innerText = 'Type a Name Partner'
+                errorMessage.setAttribute("id", "error");
+                let error = document.getElementById("error") //Stops replication of error message//
+                if (error !== null){
+                    popupTextContainer.removeChild(error)
+                }
+                popupTextContainer.append(errorMessage)
+                
+                return 
+            }
+
             player1 = player(player1NameInput.value);
             player2 = player(player2NameInput.value);
             playerPopupScreen.style.display = 'none';
@@ -100,6 +114,7 @@ const game = (() => {
             player2NameInput.value = '';
             //Need to put this in the event listener because otherwise a playername doesn't exist for original turn message//
             turnMessage.innerText = turnMessage.innerText = player1.playerName()+ "'s" + ' Turn';
+            //playerPopupScreen.remove(errorMessage)
 
 
         })
@@ -107,6 +122,10 @@ const game = (() => {
         closeBtn.addEventListener('click', () => {
             player1NameInput.value = '';
             player2NameInput.value = '';
+            let error = document.getElementById("error")
+            if (error !== null) {
+                popupTextContainer.removeChild(error)
+            }
             playerPopupScreen.style.display = 'none'
         })
         let defaultsBtn = document.querySelector('#defaultsBtn');
@@ -179,12 +198,12 @@ const game = (() => {
         function tie() {
             popupScreen.style.display = 'block'
             popupText.innerText = 'CAT'
-            popupText2.innerText = 'Doc it\'s only a scratch, I\'ll be better soon as im able'
+            popupText2.innerText = 'Doc it\'s only a scratch, I\'ll be better soon as I\'m able'
         }
 
         //This is crazy inefficient and why I should have been using the array//
 
-        //Check values if statements
+        //Check values if statements//
         if ((square1.value == 1 && square2.value == 1 && square3.value == 1)
             || (square4.value == 1 && square5.value == 1 && square6.value == 1)
             || (square7.value == 1 && square8.value == 1 && square9.value == 1)
@@ -222,6 +241,7 @@ const game = (() => {
         }
     }
 
+//Clears who board, activeates buttons, makes ready to go//
     function reset() {
         turn = true;
         turnMessage.innerText = player1.playerName()+ "'s" + ' Turn';
@@ -259,6 +279,10 @@ const game = (() => {
 
         let playerText = document.querySelector("#playerText");
         //playerText.innerText = 'Danny Boy, this is a Showdown'
+        let error = document.getElementById("error")
+        if (error !== null) {
+            popupTextContainer.removeChild(error)
+        }
 
         gameBoard.addToBoard()
 
